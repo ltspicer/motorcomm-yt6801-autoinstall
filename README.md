@@ -20,6 +20,8 @@ Eintragen/hinzufügen:
 
 **@reboot /root/yt6801-autoinstall.sh**
 
+Jetzt speichern.
+
 **Unbedingt die Router/Gateway IP im Script eintragen!**
 
 ----------------------------------------------------------------------
@@ -42,5 +44,7 @@ Make executable:
 Enter/add:
 
 **@reboot /root/yt6801-autoinstall.sh**
+
+Save now.
 
 **Be sure to enter the router/gateway IP in the script!**
