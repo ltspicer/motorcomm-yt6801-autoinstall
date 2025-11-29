@@ -9,6 +9,7 @@ welches nach einem Reboot aufgerufen wird.
 
 
 **yt6801-autoinstall.sh** & **tuxedo-yt6801_1.0.28-1_all.deb** ins **/root** Verzeichnis kopieren.
+
 Ausführbar machen:
 
 **chmod a+x /root/yt6801-autoinstall.sh**
@@ -31,6 +32,7 @@ that is called after a reboot.
 
 
 Copy **yt6801-autoinstall.sh** & **tuxedo-yt6801_1.0.28-1_all.deb** to the **/root** directory.
+
 Make executable:
 
 **chmod a+x /root/yt6801-autoinstall.sh**
