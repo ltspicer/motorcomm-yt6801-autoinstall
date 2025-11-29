@@ -6,7 +6,7 @@
 # crontab -e
 # @reboot /root/yt6801-autoinstall.sh
 
-PING_TARGET="192.168.1.100"         # Hier Router/Gateway IP eintragen!!!
+PING_TARGET="192.168.1.1"         # Hier Router/Gateway IP eintragen!!!
 
 ######################################
 
