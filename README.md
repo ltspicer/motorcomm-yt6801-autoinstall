@@ -16,7 +16,7 @@ Ausführbar machen:
 
 **crontab -e** # Dies als root ausführen!
 
-Eintragen:
+Eintragen/hinzufügen:
 
 **@reboot /root/yt6801-autoinstall.sh**
 
@@ -39,7 +39,7 @@ Make executable:
 
 **crontab -e** # Run this as root!
 
-Enter:
+Enter/add:
 
 **@reboot /root/yt6801-autoinstall.sh**
 
