@@ -8,8 +8,10 @@ Da DKMS in diesem Fall auch nicht zuverlässig funktioniert, habe ich ein autoin
 welches nach einem Reboot aufgerufen wird.
 
 
-**yt6801-autoinstall.sh** & **tuxedo-yt6801_1.0.28-1_all.deb** ins /root Verzeichnis kopieren.
-Ausführbar machen: **chmod a+x /root/yt6801-autoinstall.sh**
+**yt6801-autoinstall.sh** & **tuxedo-yt6801_1.0.28-1_all.deb** ins **/root** Verzeichnis kopieren.
+Ausführbar machen:
+
+**chmod a+x /root/yt6801-autoinstall.sh**
 
 **crontab -e** # Dies als root ausführen!
 
@@ -28,8 +30,10 @@ Since DKMS does not work reliably in this case either, I created an autoinstall 
 that is called after a reboot.
 
 
-Copy **yt6801-autoinstall.sh** & **tuxedo-yt6801_1.0.28-1_all.deb** to the /root directory.
-Make executable: **chmod a+x /root/yt6801-autoinstall.sh**
+Copy **yt6801-autoinstall.sh** & **tuxedo-yt6801_1.0.28-1_all.deb** to the **/root** directory.
+Make executable:
+
+**chmod a+x /root/yt6801-autoinstall.sh**
 
 **crontab -e** # Run this as root!
 
