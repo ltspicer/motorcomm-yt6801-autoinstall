@@ -24,6 +24,7 @@ Jetzt speichern.
 
 **Unbedingt die Router/Gateway IP im Script eintragen!**
 
+---------------------------------------------
 
 ## Autoinstall of motorcomm-yt6801 driver after Kernel update
 
