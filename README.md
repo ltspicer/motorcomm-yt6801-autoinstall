@@ -1,5 +1,5 @@
 # motorcomm-yt6801-autoinstall
-Autoinstall of motorcomm-yt6801 driver after reboot
+##Autoinstall of motorcomm-yt6801 driver after Kernel update
 
 Da dieser Treiber nicht automatisch von Linux erkannt wird, können Bootprobleme entstehn.
 Es ist keine Netzwerk verbindung mehr möglich.
