@@ -1,5 +1,5 @@
 # motorcomm-yt6801-autoinstall
-## Autoinstall of motorcomm-yt6801 driver after Kernel update
+## Autoinstall des motorcomm-yt6801 Treibers nach einem Kernel Update
 
 Da dieser Treiber nicht automatisch von Linux erkannt wird, können Bootprobleme entstehn.
 Es ist keine Netzwerk verbindung mehr möglich.
@@ -24,7 +24,8 @@ Jetzt speichern.
 
 **Unbedingt die Router/Gateway IP im Script eintragen!**
 
-----------------------------------------------------------------------
+
+## Autoinstall of motorcomm-yt6801 driver after Kernel update
 
 Since this driver is not automatically recognized by Linux, boot problems may occur.
 Network connection is no longer possible.
