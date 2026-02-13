@@ -2,7 +2,7 @@
 
 # /root/tuxedo-yt6801_1.0.28-1_all.deb
 # oder
-# /root/tuxedo-yt6801_1.0.30tux5_all.deb   MUSS vorhanden sein!!!
+# /root/tuxedo-yt6801_1.0.30tux5_all.deb   mindestens eine deb MUSS vorhanden sein!!!
 
 # Da Cron eingeschränkten PATH
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
