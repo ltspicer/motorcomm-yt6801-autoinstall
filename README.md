@@ -8,7 +8,7 @@ Da DKMS in diesem Fall auch nicht zuverlässig funktioniert, habe ich ein autoin
 welches nach einem Reboot aufgerufen wird.
 
 
-**yt6801-autoinstall.sh** & **tuxedo-yt6801_1.0.28-1_all.deb** ins **/root** Verzeichnis kopieren.
+**yt6801-autoinstall.sh** & **tuxedo-yt6801_1.0.28-1_all.deb** & **tuxedo-yt6801_1.0.30tux5_all.deb** ins **/root** Verzeichnis kopieren.
 
 Ausführbar machen:
 
