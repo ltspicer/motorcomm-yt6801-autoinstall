@@ -1,23 +1,32 @@
 #!/bin/bash
 
-# Info:
-# /root/tuxedo-yt6801_1.0.28-1_all.deb   MUSS vorhanden sein!!!
-
-# crontab -e
-# @reboot /root/yt6801-autoinstall.sh
-
-PING_TARGET="192.168.1.1"         # Hier Router/Gateway IP eintragen!!!
-
-######################################
-
-# Ab hier keine Eintragungen notwendig
+# /root/tuxedo-yt6801_1.0.28-1_all.deb
+# oder
+# /root/tuxedo-yt6801_1.0.30tux5_all.deb   MUSS vorhanden sein!!!
 
 # Da Cron eingeschränkten PATH
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
 # --- Konfiguration ---
-DEB_PKG="/root/tuxedo-yt6801_1.0.28-1_all.deb"
+
+DEBUG=false
+
+DEB_PKG1="/root/tuxedo-yt6801_1.0.28-1_all.deb"
+DEB_PKG2="/root/tuxedo-yt6801_1.0.30tux5_all.deb"
+
+PING_TARGET="192.168.1.1"                     # Hier Router/Gateway IP eintragen!!!
 LOGFILE="/var/log/yt6801-autoinstall.log"
+
+mkdir -p /var/log
+touch "$LOGFILE"
+
+MARKER="/root/yt6801_stage"
+
+if [ ! -f "$MARKER" ]; then
+    echo 0 > "$MARKER"
+fi
+
+STAGE=$(cat "$MARKER")
 
 log() {
     echo "$(date '+%F %T') - $1" | tee -a "$LOGFILE"
@@ -28,30 +37,63 @@ log "=== Start yt6801 Auto-Installer ==="
 # --- Netzwerk testen ---
 if ping -c 1 -W 2 $PING_TARGET &>/dev/null; then
     log "Netzwerk funktioniert, keine Aktion notwendig."
+    echo 0 > "$MARKER"
     exit 0
 else
     log "Netzwerk nicht erreichbar, starte Treiberinstallation..."
 fi
 
-# --- Deb-Paket installieren ---
-if [ -f "$DEB_PKG" ]; then
-    log "Installiere Deb-Paket $DEB_PKG ..."
-    dpkg -i "$DEB_PKG" >> "$LOGFILE" 2>&1
+# --- Stage erhöhen ---
+STAGE=$((STAGE + 1))
+echo "$STAGE" > "$MARKER"
+
+# --- Treiberwahl ---
+if [ "$STAGE" -eq 1 ]; then
+    DEB_PKG="$DEB_PKG1"
+elif [ "$STAGE" -eq 2 ]; then
+    DEB_PKG="$DEB_PKG2"
 else
-    log "Deb-Paket $DEB_PKG nicht gefunden!"
+    log "Keine Treiberinstallation erfolgreich!"
+    log "Nach Beheben des Problems die Datei $MARKER löschen!"
     exit 1
 fi
 
-# --- Modul dauerhaft laden ---
-echo yt6801 | tee -a /etc/modules >> "$LOGFILE" 2>&1
+# --- Deb-Paket installieren ---
+if [ ! -f "$DEB_PKG" ]; then
+    log "Deb-Paket $DEB_PKG nicht gefunden!"
 
-# --- Abhängigkeiten neu einlesen ---
-depmod >> "$LOGFILE" 2>&1
+    # --- Fallback: Wenn STAGE 1 und Paket 1 fehlt → STAGE 2 versuchen ---
+    if [ "$STAGE" -eq 1 ]; then
+        log "Wechsle zu STAGE 2 und versuche $DEB_PKG2 ..."
+        echo 2 > "$MARKER"
+        exec "$0"   # Skript neu starten
+    fi
+
+    exit 1
+fi
+
+log "Installiere Deb-Paket $DEB_PKG ..."
+if [ "$DEBUG" = false ]; then
+    if ! dpkg -i "$DEB_PKG" >> "$LOGFILE" 2>&1; then
+        log "dpkg-Installation fehlgeschlagen!"
+        exit 1
+    fi
+fi
+
+# --- Modul dauerhaft laden ---
+if [ "$DEBUG" = false ]; then
+    if ! grep -qxF "yt6801" /etc/modules; then
+        echo yt6801 | tee -a /etc/modules >> "$LOGFILE" 2>&1
+    fi
+
+    # --- Abhängigkeiten neu einlesen ---
+    depmod >> "$LOGFILE" 2>&1
+fi
 
 # --- Prüfen, ob Modul geladen ist ---
 if lsmod | grep -q yt6801; then
     log "Treiber bereits geladen!"
-else
+elif [ "$DEBUG" = false ]; then
     log "Lade Kernel-Modul yt6801 ..."
     modprobe yt6801 >> "$LOGFILE" 2>&1
 fi
@@ -61,4 +103,9 @@ lsmod | grep yt6801 | tee -a "$LOGFILE"
 
 log "=== Fertig ==="
 log "Treiber ist geladen. reboot..."
-reboot
+
+if [ "$DEBUG" = false ]; then
+    reboot
+else
+    log "DEBUG: Kein Reboot."
+fi
