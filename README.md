@@ -35,7 +35,7 @@ Since DKMS does not work reliably in this case either, I created an autoinstall 
 that is called after a reboot.
 
 
-Copy **yt6801-autoinstall.sh** & **tuxedo-yt6801_1.0.28-1_all.deb** to the **/root** directory.
+Copy **yt6801-autoinstall.sh** & **tuxedo-yt6801_1.0.28-1_all.deb** & **tuxedo-yt6801_1.0.30tux5_all.deb** to the **/root** directory.
 
 Make executable:
 
