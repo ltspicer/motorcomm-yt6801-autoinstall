@@ -11,8 +11,8 @@ export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
 DEBUG=false
 
-DEB_PKG1="/root/tuxedo-yt6801_1.0.28-1_all.deb"
-DEB_PKG2="/root/tuxedo-yt6801_1.0.30tux5_all.deb"
+DEB_PKG2="/root/tuxedo-yt6801_1.0.28-1_all.deb"
+DEB_PKG1="/root/tuxedo-yt6801_1.0.30tux5_all.deb"
 
 PING_TARGET="192.168.1.1"                     # Hier Router/Gateway IP eintragen!!!
 LOGFILE="/var/log/yt6801-autoinstall.log"
@@ -32,7 +32,10 @@ log() {
     echo "$(date '+%F %T') - $1" | tee -a "$LOGFILE"
 }
 
+log ""
 log "=== Start yt6801 Auto-Installer ==="
+
+sleep 10
 
 # --- Netzwerk testen ---
 if ping -c 1 -W 2 $PING_TARGET &>/dev/null; then
@@ -47,6 +50,8 @@ fi
 STAGE=$((STAGE + 1))
 echo "$STAGE" > "$MARKER"
 
+log "Stage: $STAGE"
+
 # --- Treiberwahl ---
 if [ "$STAGE" -eq 1 ]; then
     DEB_PKG="$DEB_PKG1"
@@ -54,30 +59,21 @@ elif [ "$STAGE" -eq 2 ]; then
     DEB_PKG="$DEB_PKG2"
 else
     log "Keine Treiberinstallation erfolgreich!"
-    log "Nach Beheben des Problems die Datei $MARKER löschen!"
     exit 1
 fi
 
 # --- Deb-Paket installieren ---
-if [ ! -f "$DEB_PKG" ]; then
+if [ -f "$DEB_PKG" ]; then
+    log "Installiere Deb-Paket $DEB_PKG ..."
+    if [ "$DEBUG" = false ]; then
+        if ! dpkg -i "$DEB_PKG" >> "$LOGFILE" 2>&1; then
+            log "dpkg-Installation fehlgeschlagen!"
+            exit 1
+        fi
+    fi
+else
     log "Deb-Paket $DEB_PKG nicht gefunden!"
-
-    # --- Fallback: Wenn STAGE 1 und Paket 1 fehlt → STAGE 2 versuchen ---
-    if [ "$STAGE" -eq 1 ]; then
-        log "Wechsle zu STAGE 2 und versuche $DEB_PKG2 ..."
-        echo 2 > "$MARKER"
-        exec "$0"   # Skript neu starten
-    fi
-
     exit 1
-fi
-
-log "Installiere Deb-Paket $DEB_PKG ..."
-if [ "$DEBUG" = false ]; then
-    if ! dpkg -i "$DEB_PKG" >> "$LOGFILE" 2>&1; then
-        log "dpkg-Installation fehlgeschlagen!"
-        exit 1
-    fi
 fi
 
 # --- Modul dauerhaft laden ---
@@ -109,3 +105,4 @@ if [ "$DEBUG" = false ]; then
 else
     log "DEBUG: Kein Reboot."
 fi
+
