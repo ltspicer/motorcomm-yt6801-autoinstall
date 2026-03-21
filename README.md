@@ -17,9 +17,9 @@ Ich empfehle, das Script zuerst im laufenden Betrieb mal mit Option "-debug" aus
 
 Beispiele:
 
-./net_check.sh -help
+        ./net_check.sh -help
 
-./yt6801-autoinstall.sh -h
+        ./yt6801-autoinstall.sh -h
 
 
 **yt6801-autoinstall.sh** & **tuxedo-yt6801_1.0.28-1_all.deb** & **tuxedo-yt6801_1.0.30tux5_all.deb** & **net_check.sh** ins **/root** Verzeichnis kopieren.
@@ -63,9 +63,9 @@ I recommend running the script first with option “-debug” while the system i
 
 Examples:
 
-./net_check.sh -help
+        ./net_check.sh -help
 
-./yt6801-autoinstall.sh -h
+        ./yt6801-autoinstall.sh -h
 
 
 Copy **yt6801-autoinstall.sh** & **tuxedo-yt6801_1.0.28-1_all.deb** & **tuxedo-yt6801_1.0.30tux5_all.deb** & **net_check.sh** to the **/root** directory.
