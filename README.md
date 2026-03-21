@@ -13,7 +13,7 @@ Dieses prüft beim Boot, ob eine Verbindung zum Router/Gateway besteht. Wenn nic
 
 Es kann nach einem Boot 5-10 Minuten dauern, bis die Netzwerkverbindung steht. Also nicht verzweifeln und etwas Geduld haben ;)
 
-Ich empfehle, das Script zuerst im laufenden Betrieb mal mit Option "-debug" auszuführen und dann den log zu prüfen ( /var/log/yt6801-autoinstall.log ).
+Ich empfehle, das Script zuerst im laufenden Betrieb mal mit Option **-debug** auszuführen und dann den log zu prüfen ( /var/log/yt6801-autoinstall.log ).
 
 Beispiele:
 
@@ -21,6 +21,7 @@ Beispiele:
 
         ./yt6801-autoinstall.sh -h
 
+        ./yt6801-autoinstall.sh -debug
 
 **yt6801-autoinstall.sh** & **tuxedo-yt6801_1.0.28-1_all.deb** & **tuxedo-yt6801_1.0.30tux5_all.deb** & **net_check.sh** ins **/root** Verzeichnis kopieren.
 
@@ -59,7 +60,7 @@ During startup, this checks whether there is a connection to the router/gateway.
 
 It may take 5–10 minutes after booting up for the network connection to be established. So don’t worry—just be patient ;)
 
-I recommend running the script first with option “-debug” while the system is running, and then checking the log ( /var/log/yt6801-autoinstall.log ).
+I recommend running the script first with option **-debug** while the system is running, and then checking the log ( /var/log/yt6801-autoinstall.log ).
 
 Examples:
 
@@ -67,6 +68,7 @@ Examples:
 
         ./yt6801-autoinstall.sh -h
 
+        ./yt6801-autoinstall.sh -debug
 
 Copy **yt6801-autoinstall.sh** & **tuxedo-yt6801_1.0.28-1_all.deb** & **tuxedo-yt6801_1.0.30tux5_all.deb** & **net_check.sh** to the **/root** directory.
 
