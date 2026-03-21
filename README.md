@@ -19,7 +19,7 @@ Beispiele:
 
         ./net_check.sh -help
 
-        ./yt6801-autoinstall.sh -h
+        ./yt6801-autoinstall.sh ?
 
         ./yt6801-autoinstall.sh -debug
 
@@ -66,7 +66,7 @@ Examples:
 
         ./net_check.sh -help
 
-        ./yt6801-autoinstall.sh -h
+        ./yt6801-autoinstall.sh ?
 
         ./yt6801-autoinstall.sh -debug
 
