@@ -1,13 +1,25 @@
 #!/bin/bash
 
+################################# motorcomm-yt6801-autoinstall ####################################
+
+# Dieses Script nach /root kopieren und ausführbar machen ( chmod a+x /root/yt6801-autoinstall.sh )
+
+# Cron Eintrag:
+
+# @reboot /root/yt6801-autoinstall.sh
+
+###################################################################################################
+
 # /root/tuxedo-yt6801_1.0.28-1_all.deb
 # oder
 # /root/tuxedo-yt6801_1.0.30tux5_all.deb   mindestens eine deb MUSS vorhanden sein!!!
 
+###################################################################################################
+
 # Da Cron eingeschränkten PATH
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
-# --- Konfiguration ---
+#################### --- Konfiguration --- ####################
 
 DEBUG=false
 
@@ -17,10 +29,12 @@ DEB_PKG2="/root/tuxedo-yt6801_1.0.30tux5_all.deb"
 PING_TARGET="192.168.1.1"                     # Hier Router/Gateway IP eintragen!!!
 LOGFILE="/var/log/yt6801-autoinstall.log"
 
+MARKER="/root/yt6801_stage"
+
+############ --- Ab hier keine Änderungen mehr --- ############
+
 mkdir -p /var/log
 touch "$LOGFILE"
-
-MARKER="/root/yt6801_stage"
 
 if [ ! -f "$MARKER" ]; then
     echo 0 > "$MARKER"
