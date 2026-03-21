@@ -27,10 +27,8 @@ log() {
 }
 
 if [ ! -f "$MARKER" ]; then
-    if [ "$DEBUG" = "true" ]; then
-        log "=== Keine Datei $MARKER gefunden. Exit ==="
-        exit 0
-    fi
+    log "Keine Datei $MARKER gefunden. Exit"
+    exit 0
 fi
 
 STAGE=$(cat "$MARKER")
@@ -39,15 +37,15 @@ STAGE=$(cat "$MARKER")
 if ping -c 1 -W 2 $PING_TARGET &>/dev/null; then
     if [ "$STAGE" -eq 3 ]; then
         echo 0 > "$MARKER"
-        log "=== Stage auf 0 gesetzt ==="
+        log "Stage auf 0 gesetzt"
     fi
     if [ "$DEBUG" = "true" ]; then
-        log "=== Ping erfolgreich ==="
+        log "Ping erfolgreich"
     fi
     exit 0
 else
     if [ "$DEBUG" = "true" ]; then
-        log "=== Ping nicht erfolgreich (Stage belassen)==="
+        log "Ping nicht erfolgreich (Stage belassen)"
         log "PING_TARGET = $PING_TARGET . Ist das korrekt?"
     fi
 fi
