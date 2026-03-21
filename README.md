@@ -1,7 +1,7 @@
 # motorcomm-yt6801-autoinstall
 ## Selbständige Installation des motorcomm-yt6801 Treibers nach einem Kernel Update
 
-Da dieser Treiber nicht im Linux Kernel integriert ist, kann der LAN Treiber nach einem Boot fehlen.
+Da dieser Treiber nicht im Linux Kernel integriert ist, kann das LAN nach einem Boot fehlen.
 Es ist dann keine Netzwerkverbindung möglich.
 Bei Servern ohne Bildschirm wie zBsp. bei Proxmox ist das ziemlich ärgerlich und aufwändig.
 Da DKMS in diesem Fall auch nicht zuverlässig funktioniert, habe ich ein autoinstall Script erstellt,
@@ -33,7 +33,7 @@ Jetzt speichern.
 
 ## Autoinstall of motorcomm-yt6801 driver after Kernel update
 
-Since this driver is not built into the Linux kernel, the LAN driver may be missing after a reboot.
+Since this driver is not built into the Linux kernel, the LAN connection may be missing after a reboot.
 In that case, no network connection is possible.
 For servers without a screen, such as Proxmox, this is quite annoying and time-consuming.
 Since DKMS does not work reliably in this case either, I created an autoinstall script
