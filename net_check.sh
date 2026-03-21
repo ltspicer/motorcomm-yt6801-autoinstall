@@ -37,7 +37,7 @@ STAGE=$(cat "$MARKER")
 
 # --- Netzwerk testen ---
 if ping -c 1 -W 2 $PING_TARGET &>/dev/null; then
-    if [ "$STAGE" -ne 0 ]; then
+    if [ "$STAGE" -eq 3 ]; then
         echo 0 > "$MARKER"
         log "=== Stage auf 0 gesetzt ==="
     fi
