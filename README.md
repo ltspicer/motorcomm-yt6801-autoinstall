@@ -8,21 +8,25 @@ Da DKMS in diesem Fall auch nicht zuverlässig funktioniert, habe ich ein autoin
 welches nach einem Reboot aufgerufen wird.
 
 
-**yt6801-autoinstall.sh** & **tuxedo-yt6801_1.0.28-1_all.deb** & **tuxedo-yt6801_1.0.30tux5_all.deb** ins **/root** Verzeichnis kopieren.
+**yt6801-autoinstall.sh** & **tuxedo-yt6801_1.0.28-1_all.deb** & **tuxedo-yt6801_1.0.30tux5_all.deb** & **net_check.sh** ins **/root** Verzeichnis kopieren.
 
 Ausführbar machen:
 
 **chmod a+x /root/yt6801-autoinstall.sh**
 
-**crontab -e** # Dies als root ausführen!
+**chmod a+x /root/net_check.sh**
+
+**crontab -e** # Dies als root ausführen (sudo)!
 
 Eintragen/hinzufügen:
 
 **@reboot /root/yt6801-autoinstall.sh**
 
+***/5 * * * * /root/net_check.sh**
+
 Jetzt speichern.
 
-**Unbedingt die Router/Gateway IP im Script eintragen!**
+**Unbedingt die Router/Gateway IP in beiden Scripten eintragen!**
 
 ---------------------------------------------
 
@@ -35,18 +39,22 @@ Since DKMS does not work reliably in this case either, I created an autoinstall 
 that is called after a reboot.
 
 
-Copy **yt6801-autoinstall.sh** & **tuxedo-yt6801_1.0.28-1_all.deb** & **tuxedo-yt6801_1.0.30tux5_all.deb** to the **/root** directory.
+Copy **yt6801-autoinstall.sh** & **tuxedo-yt6801_1.0.28-1_all.deb** & **tuxedo-yt6801_1.0.30tux5_all.deb** & **net_check.sh** to the **/root** directory.
 
 Make executable:
 
 **chmod a+x /root/yt6801-autoinstall.sh**
 
-**crontab -e** # Run this as root!
+**chmod a+x /root/net_check.sh**
+
+**crontab -e** # Run this as root (sudo)!
 
 Enter/add:
 
 **@reboot /root/yt6801-autoinstall.sh**
 
+***/5 * * * * /root/net_check.sh**
+
 Save now.
 
-**Be sure to enter the router/gateway IP in the script!**
+**Be sure to enter the router/gateway IP address in both scripts!**
