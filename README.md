@@ -3,7 +3,9 @@
 
 Da dieser Treiber nicht im Linux Kernel integriert ist, kann das LAN nach einem Boot fehlen.
 Es ist dann keine Netzwerkverbindung möglich.
-Bei Servern ohne Bildschirm wie zBsp. bei Proxmox ist das ziemlich ärgerlich und aufwändig.
+
+Bei Headless-Servern (ohne angeschlossenen Bildschirm) wie zBsp. bei Proxmox Servern ist das ziemlich ärgerlich und aufwändig, wieder eine SSH Session zu bekommen.
+
 Da DKMS in diesem Fall auch nicht zuverlässig funktioniert, habe ich ein autoinstall Script erstellt,
 welches nach einem Reboot aufgerufen wird.
 
@@ -39,7 +41,9 @@ Jetzt speichern.
 
 Since this driver is not built into the Linux kernel, the LAN connection may be missing after a reboot.
 In that case, no network connection is possible.
-For servers without a screen, such as Proxmox, this is quite annoying and time-consuming.
+
+With headless servers (without a connected monitor), such as Proxmox servers, it’s quite frustrating and time-consuming to re-establish an SSH session.
+
 Since DKMS does not work reliably in this case either, I created an autoinstall script
 that is called after a reboot.
 
