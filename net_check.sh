@@ -21,10 +21,10 @@ PING_TARGET="192.168.1.1"                       # Gleich wie in yt6801-autoinsta
 LOGFILE="/var/log/yt6801-autoinstall.log"       # Gleich wie in yt6801-autoinstall.sh
 MARKER="/root/yt6801_stage"                     # Gleich wie in yt6801-autoinstall.sh
 
-mkdir -p /var/log                               # Gleich wie in yt6801-autoinstall.sh
-touch "$LOGFILE"
-
 ############ --- Ab hier keine Änderungen mehr --- ############
+
+mkdir -p /var/log
+touch "$LOGFILE"
 
 log() {
     echo "$(date '+%F %T') - $1" | tee -a "$LOGFILE"
