@@ -9,6 +9,8 @@ Bei Headless-Servern (ohne angeschlossenen Bildschirm) wie zBsp. bei Proxmox Ser
 Da DKMS in diesem Fall auch nicht zuverlässig funktioniert, habe ich ein autoinstall Script erstellt,
 welches nach einem Reboot aufgerufen wird.
 
+Dieses prüft beim Boot, ob eine Verbindung zum Router/Gateway besteht. Wenn nicht, wird der yt6801 Treiber automatisch installiert.
+
 Es kann nach einem Boot 5-10 Minuten dauern, bis die Netzwerkverbindung steht. Also nicht verzweifeln und etwas Geduld haben ;)
 
 Ich empfehle, das Script zuerst im laufenden Betrieb mal mit "DEBUG=true" auszuführen und dann den log zu prüfen ( /var/log/yt6801-autoinstall.log ).
@@ -46,6 +48,8 @@ With headless servers (without a connected monitor), such as Proxmox servers, it
 
 Since DKMS does not work reliably in this case either, I created an autoinstall script
 that is called after a reboot.
+
+During startup, this checks whether there is a connection to the router/gateway. If not, the yt6801 driver is installed automatically.
 
 It may take 5–10 minutes after booting up for the network connection to be established. So don’t worry—just be patient ;)
 
