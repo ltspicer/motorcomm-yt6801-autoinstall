@@ -12,7 +12,7 @@
 
 # /root/tuxedo-yt6801_1.0.28-1_all.deb
 # oder/und
-# /root/tuxedo-yt6801_1.0.30tux5_all.deb   mindestens eine deb MUSS vorhanden sein!!!
+# /root/tuxedo-yt6801_1.0.30tux5_all.deb   mindestens eine DEB (DEB_PKG1) MUSS vorhanden sein!!!
 
 ###################################################################################################
 
