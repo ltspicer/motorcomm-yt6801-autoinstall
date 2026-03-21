@@ -1,17 +1,19 @@
 #!/bin/bash
 
-### Periodische Überprüfung der Netzwerkverbindung ###
+################### Periodische Überprüfung der Netzwerkverbindung #######################
 
 # Dieses Script nach /root kopieren und ausführbar machen ( chmod a+x /root/net_check.sh )
-#
+
 # Cron Eintrag:
-#
+
 # */15 * * * * /root/net_check.sh
+
+##########################################################################################
 
 # Da Cron eingeschränkten PATH
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
-# --- Konfiguration ---
+#################### --- Konfiguration --- ####################
 
 DEBUG=false
 
@@ -22,7 +24,7 @@ MARKER="/root/yt6801_stage"                     # Gleich wie in yt6801-autoinsta
 mkdir -p /var/log                               # Gleich wie in yt6801-autoinstall.sh
 touch "$LOGFILE"
 
-# --- Ab hier keine Änderungen mehr ---
+############ --- Ab hier keine Änderungen mehr --- ############
 
 log() {
     echo "$(date '+%F %T') - $1" | tee -a "$LOGFILE"
