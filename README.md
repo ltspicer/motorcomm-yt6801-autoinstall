@@ -18,16 +18,16 @@ Ausführbar machen:
 
 **crontab -e** # Dies als root ausführen (sudo)!
 
-Oder mit diesem Einzeiler (Du musst als root eingeloggt sein!):
-
-        cd /root && git clone https://github.com/ltspicer/motorcomm-yt6801-autoinstall.git && cd motorcomm-yt6801-autoinstall && chmod a+x yt6801-autoinstall.sh net_check.sh && crontab -e
-
 Eintragen/hinzufügen im Cron:
 
         @reboot /root/yt6801-autoinstall.sh
         */15 * * * * /root/net_check.sh
 
 Jetzt speichern.
+
+Oder mit diesem Einzeiler (Du musst als root eingeloggt sein!):
+
+        cd /root && git clone https://github.com/ltspicer/motorcomm-yt6801-autoinstall.git && cd motorcomm-yt6801-autoinstall && chmod a+x yt6801-autoinstall.sh net_check.sh && (crontab -l 2>/dev/null | grep -v -E 'yt6801-autoinstall.sh|net_check.sh'; echo "@reboot /root/motorcomm-yt6801-autoinstall/yt6801-autoinstall.sh"; echo "*/15 * * * * /root/motorcomm-yt6801-autoinstall/net_check.sh") | crontab -
 
 **Unbedingt die Router/Gateway IP in beiden Scripten eintragen!**
 
@@ -52,15 +52,15 @@ Make executable:
 
 **crontab -e** # Run this as root (sudo)!
 
-Or with this one-liner (You must be logged in as root!):
-
-        cd /root && git clone https://github.com/ltspicer/motorcomm-yt6801-autoinstall.git && cd motorcomm-yt6801-autoinstall && chmod a+x yt6801-autoinstall.sh net_check.sh && crontab -e
-
 Enter/add in Cron:
 
         @reboot /root/yt6801-autoinstall.sh
         */15 * * * * /root/net_check.sh
 
 Save now.
+
+Or with this one-liner (You must be logged in as root!):
+
+        cd /root && git clone https://github.com/ltspicer/motorcomm-yt6801-autoinstall.git && cd motorcomm-yt6801-autoinstall && chmod a+x yt6801-autoinstall.sh net_check.sh && (crontab -l 2>/dev/null | grep -v -E 'yt6801-autoinstall.sh|net_check.sh'; echo "@reboot /root/motorcomm-yt6801-autoinstall/yt6801-autoinstall.sh"; echo "*/15 * * * * /root/motorcomm-yt6801-autoinstall/net_check.sh") | crontab -
 
 **Be sure to enter the router/gateway IP address in both scripts!**
