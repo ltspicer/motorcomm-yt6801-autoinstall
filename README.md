@@ -18,6 +18,10 @@ Ausführbar machen:
 
 **crontab -e** # Dies als root ausführen (sudo)!
 
+Oder mit diesem Einzeiler (Du musst als root eingeloggt sein!):
+
+        cd /root && git clone https://github.com/ltspicer/motorcomm-yt6801-autoinstall.git && cd motorcomm-yt6801-autoinstall && chmod a+x yt6801-autoinstall.sh net_check.sh && crontab -e
+
 Eintragen/hinzufügen:
 
 **@reboot /root/yt6801-autoinstall.sh**
@@ -48,6 +52,10 @@ Make executable:
 **chmod a+x /root/net_check.sh**
 
 **crontab -e** # Run this as root (sudo)!
+
+Or with this one-liner (You must be logged in as root!):
+
+        cd /root && git clone https://github.com/ltspicer/motorcomm-yt6801-autoinstall.git && cd motorcomm-yt6801-autoinstall && chmod a+x yt6801-autoinstall.sh net_check.sh && crontab -e
 
 Enter/add:
 
