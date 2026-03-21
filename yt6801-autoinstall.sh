@@ -39,6 +39,15 @@ log() {
     echo "$(date '+%F %T') - $1" | tee -a "$LOGFILE"
 }
 
+LOCKFILE="/tmp/yt6801.lock"
+
+if ! mkdir "$LOCKFILE" 2>/dev/null; then
+    log "Script läuft bereits – Abbruch"
+    exit 1
+fi
+
+trap 'rmdir "$LOCKFILE" 2>/dev/null' EXIT
+
 DEBUG=false
 
 # Hilfe-Funktion
