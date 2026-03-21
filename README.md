@@ -12,9 +12,7 @@ welches nach einem Reboot aufgerufen wird.
 
 Ausführbar machen:
 
-**chmod a+x /root/yt6801-autoinstall.sh**
-
-**chmod a+x /root/net_check.sh**
+**chmod a+x /root/yt6801-autoinstall.sh /root/net_check.sh**
 
 **crontab -e** # Dies als root ausführen (sudo)!
 
@@ -46,9 +44,7 @@ Copy **yt6801-autoinstall.sh** & **tuxedo-yt6801_1.0.28-1_all.deb** & **tuxedo-y
 
 Make executable:
 
-**chmod a+x /root/yt6801-autoinstall.sh**
-
-**chmod a+x /root/net_check.sh**
+**chmod a+x /root/yt6801-autoinstall.sh /root/net_check.sh**
 
 **crontab -e** # Run this as root (sudo)!
 
