@@ -28,6 +28,15 @@ log() {
     echo "$(date '+%F %T') - $1" | tee -a "$LOGFILE"
 }
 
+# Name/Ort des Locks von Script yt6801-autoinstall.sh
+LOCKFILE="/tmp/yt6801.lock"
+
+# Prüfen, ob anderes Script läuft
+if [ -d "$LOCKFILE" ]; then
+    echo "yt6801-autoinstall.sh läuft gerade – Exit"
+    exit 1
+fi
+
 DEBUG=false
 
 # Hilfe-Funktion
