@@ -45,7 +45,7 @@ if ping -c 1 -W 2 $PING_TARGET &>/dev/null; then
     exit 0
 else
     if [ "$DEBUG" = "true" ]; then
-        log "Ping nicht erfolgreich (Stage belassen)"
+        log "Ping nicht erfolgreich ( $MARKER auf $STAGE belassen)"
         log "PING_TARGET = $PING_TARGET . Ist das korrekt?"
     fi
 fi
