@@ -24,9 +24,11 @@ export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 DEB_PKG1="/root/tuxedo-yt6801_1.0.28-1_all.deb"
 DEB_PKG2="/root/tuxedo-yt6801_1.0.30tux5_all.deb"
 
-PING_TARGET="192.168.1.111"                     # Hier Router/Gateway IP eintragen!!!
-LOGFILE="/var/log/yt6801-autoinstall.log"
+PING_TARGET="192.168.1.111"                     # !!! Hier Router/Gateway IP eintragen !!!
 
+####
+
+LOGFILE="/var/log/yt6801-autoinstall.log"
 MARKER="/root/yt6801_stage"
 
 ############ --- Ab hier keine Änderungen mehr --- ############

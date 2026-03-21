@@ -16,8 +16,11 @@ export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 #################### --- Konfiguration --- ####################
 
 PING_TARGET="192.168.1.1"                       # Gleich wie in yt6801-autoinstall.sh
-LOGFILE="/var/log/yt6801-autoinstall.log"       # Gleich wie in yt6801-autoinstall.sh
-MARKER="/root/yt6801_stage"                     # Gleich wie in yt6801-autoinstall.sh
+
+####
+
+LOGFILE="/var/log/yt6801-autoinstall.log" 
+MARKER="/root/yt6801_stage"
 
 ############ --- Ab hier keine Änderungen mehr --- ############
 
