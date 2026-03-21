@@ -22,7 +22,7 @@ Oder mit diesem Einzeiler (Du musst als root eingeloggt sein!):
 
         cd /root && git clone https://github.com/ltspicer/motorcomm-yt6801-autoinstall.git && cd motorcomm-yt6801-autoinstall && chmod a+x yt6801-autoinstall.sh net_check.sh && crontab -e
 
-Eintragen/hinzufügen:
+Eintragen/hinzufügen im Cron:
 
         @reboot /root/yt6801-autoinstall.sh
         */15 * * * * /root/net_check.sh
@@ -56,7 +56,7 @@ Or with this one-liner (You must be logged in as root!):
 
         cd /root && git clone https://github.com/ltspicer/motorcomm-yt6801-autoinstall.git && cd motorcomm-yt6801-autoinstall && chmod a+x yt6801-autoinstall.sh net_check.sh && crontab -e
 
-Enter/add:
+Enter/add in Cron:
 
         @reboot /root/yt6801-autoinstall.sh
         */15 * * * * /root/net_check.sh
