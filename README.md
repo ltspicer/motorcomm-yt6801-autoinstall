@@ -9,7 +9,7 @@ welches nach einem Reboot aufgerufen wird.
 
 Es kann nach einem Boot 5-10 Minuten dauern, bis die Netzwerkverbindung steht. Also nicht verzweifeln und etwas Geduld haben ;)
 
-Ich empfehle, vorgängig das Script im laufenden Betrieb mal mit "DEBUG=true" auszuführen und dann den log zu prüfen.
+Ich empfehle, vorgängig das Script im laufenden Betrieb mal mit "DEBUG=true" auszuführen und dann den log zu prüfen ( /var/log/yt6801-autoinstall.log ).
 
 
 **yt6801-autoinstall.sh** & **tuxedo-yt6801_1.0.28-1_all.deb** & **tuxedo-yt6801_1.0.30tux5_all.deb** & **net_check.sh** ins **/root** Verzeichnis kopieren.
@@ -45,7 +45,7 @@ that is called after a reboot.
 
 It may take 5–10 minutes after booting up for the network connection to be established. So don’t worry—just be patient ;)
 
-I recommend, to run the script with “DEBUG=true” while the system is running and then check the log.
+I recommend, to run the script with “DEBUG=true” while the system is running and then check the log ( /var/log/yt6801-autoinstall.log ).
 
 Copy **yt6801-autoinstall.sh** & **tuxedo-yt6801_1.0.28-1_all.deb** & **tuxedo-yt6801_1.0.30tux5_all.deb** & **net_check.sh** to the **/root** directory.
 
