@@ -21,17 +21,47 @@ export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
 #################### --- Konfiguration --- ####################
 
-DEBUG=false
-
 DEB_PKG1="/root/tuxedo-yt6801_1.0.28-1_all.deb"
 DEB_PKG2="/root/tuxedo-yt6801_1.0.30tux5_all.deb"
 
-PING_TARGET="192.168.1.1"                     # Hier Router/Gateway IP eintragen!!!
+PING_TARGET="192.168.1.111"                     # Hier Router/Gateway IP eintragen!!!
 LOGFILE="/var/log/yt6801-autoinstall.log"
 
 MARKER="/root/yt6801_stage"
 
 ############ --- Ab hier keine Änderungen mehr --- ############
+
+log() {
+    echo "$(date '+%F %T') - $1" | tee -a "$LOGFILE"
+}
+
+DEBUG=false
+
+# Hilfe-Funktion
+show_help() {
+    echo "Usage: $0 [options]"
+    echo ""
+    echo "Options:"
+    echo "  -debug, debug                   Enable debug mode"
+    echo "  -h, -help, -?, ?, h, help       Show this help message"
+    exit 0
+}
+
+# Argumente prüfen
+for arg in "$@"; do
+    case "${arg,,}" in
+        debug|-debug)
+            DEBUG=true
+            ;;
+        -h|-help|-?|h|help|\?)
+            show_help
+            ;;
+    esac
+done
+
+if [ "$DEBUG" = true ]; then
+    log "DEBUG aktiviert"
+fi
 
 mkdir -p /var/log
 touch "$LOGFILE"
@@ -41,10 +71,6 @@ if [ ! -f "$MARKER" ]; then
 fi
 
 STAGE=$(cat "$MARKER")
-
-log() {
-    echo "$(date '+%F %T') - $1" | tee -a "$LOGFILE"
-}
 
 log ""
 log "=== Start yt6801 Auto-Installer ==="
