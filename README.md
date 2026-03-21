@@ -22,7 +22,7 @@ Eintragen/hinzufügen:
 
 **@reboot /root/yt6801-autoinstall.sh**
 
-***/5 * * * * /root/net_check.sh**
+***/15 * * * * /root/net_check.sh**
 
 Jetzt speichern.
 
@@ -53,7 +53,7 @@ Enter/add:
 
 **@reboot /root/yt6801-autoinstall.sh**
 
-***/5 * * * * /root/net_check.sh**
+***/15 * * * * /root/net_check.sh**
 
 Save now.
 

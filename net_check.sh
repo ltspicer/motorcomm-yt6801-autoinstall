@@ -4,7 +4,7 @@
 #
 # Cron Eintrag:
 #
-# */5 * * * * /root/net_check.sh
+# */15 * * * * /root/net_check.sh
 
 # Da Cron eingeschränkten PATH
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
