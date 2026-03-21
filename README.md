@@ -7,6 +7,8 @@ Bei Servern ohne Bildschirm wie zBsp. bei Proxmox ist das ziemlich ärgerlich un
 Da DKMS in diesem Fall auch nicht zuverlässig funktioniert, habe ich ein autoinstall Script erstellt,
 welches nach einem Reboot aufgerufen wird.
 
+Es kann nach einem Boot 5-10 Minuten dauern, bis die Netzwerkverbindung steht. Also nicht verzweifeln und etwas Geduld haben ;)
+
 
 **yt6801-autoinstall.sh** & **tuxedo-yt6801_1.0.28-1_all.deb** & **tuxedo-yt6801_1.0.30tux5_all.deb** & **net_check.sh** ins **/root** Verzeichnis kopieren.
 
@@ -39,6 +41,7 @@ For servers without a screen, such as Proxmox, this is quite annoying and time-c
 Since DKMS does not work reliably in this case either, I created an autoinstall script
 that is called after a reboot.
 
+It may take 5–10 minutes after booting up for the network connection to be established. So don’t worry—just be patient ;)
 
 Copy **yt6801-autoinstall.sh** & **tuxedo-yt6801_1.0.28-1_all.deb** & **tuxedo-yt6801_1.0.30tux5_all.deb** & **net_check.sh** to the **/root** directory.
 
