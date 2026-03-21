@@ -15,7 +15,7 @@ export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
 #################### --- Konfiguration --- ####################
 
-PING_TARGET="192.168.1.1"                       # Gleich wie in yt6801-autoinstall.sh
+PING_TARGET="192.168.1.1"                   # Gleiche IP wie in yt6801-autoinstall.sh !!!
 
 ####
 
