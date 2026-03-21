@@ -1,5 +1,7 @@
 #!/bin/bash
 
+### Periodische Überprüfung der Netzwerkverbindung ###
+
 # Dieses Script nach /root kopieren und ausführbar machen ( chmod a+x /root/net_check.sh )
 #
 # Cron Eintrag:
@@ -37,7 +39,7 @@ STAGE=$(cat "$MARKER")
 if ping -c 1 -W 2 $PING_TARGET &>/dev/null; then
     if [ "$STAGE" -eq 3 ]; then
         echo 0 > "$MARKER"
-        log "Stage auf 0 gesetzt"
+        log "Netzwerk funktioniert. Setze Stage auf 0"
     fi
     if [ "$DEBUG" = "true" ]; then
         log "Ping erfolgreich"
