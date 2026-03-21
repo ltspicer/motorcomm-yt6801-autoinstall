@@ -24,9 +24,8 @@ Oder mit diesem Einzeiler (Du musst als root eingeloggt sein!):
 
 Eintragen/hinzufügen:
 
-**@reboot /root/yt6801-autoinstall.sh**
-
-***/15 * * * * /root/net_check.sh**
+        @reboot /root/yt6801-autoinstall.sh
+        */15 * * * * /root/net_check.sh
 
 Jetzt speichern.
 
@@ -59,9 +58,8 @@ Or with this one-liner (You must be logged in as root!):
 
 Enter/add:
 
-**@reboot /root/yt6801-autoinstall.sh**
-
-***/15 * * * * /root/net_check.sh**
+        @reboot /root/yt6801-autoinstall.sh
+        */15 * * * * /root/net_check.sh
 
 Save now.
 
